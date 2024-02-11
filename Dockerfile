@@ -1,15 +1,17 @@
 FROM rockylinux:9.3
-MAINTAINER "@StelthLabs"
+MAINTAINER "StelthLabs"
 
 ## This Dockerfile represents a viable substitute for an equivalent "Vagrant Box" for use with Vagrant.
 ## A Vagrant "Box" would classically be a .box image file, which is a tarball of a VirtualBox VM image.
-## Those are well-known to bloated and slow.
+## Those are well-known to be bloated and to perform rather poorly.
 ##
-## In this case, we bend the rules a bit and use Docker with systemd to create a Vagrant Box-like image
-## that can be used with Vagrant, but is much smaller and faster to download and use.
+## In this case, we bend the rules a bit and use Docker with systemd + ssh to create a Vagrant Box-like container
+## that can be used with Vagrant, but is much smaller, *much* faster, and *much* more performant.
 ##
-## It provides the same Developer Experience as working with a Vagrant Box, by providing the one thing that is
-## fundamental for Vagrant --> ssh access a-la "vagrant ssh".
+## It provides the same Developer Experience as working with a Vagrant Box, and the same performance as working directly
+## on a high-quality baremetal machine.
+##
+## It also provides the one thing that is fundamental for Vagrant --> ssh access a-la "vagrant ssh".
 
 ## Install the necessary packages and perform cleanup to make things work in a Docker container
 RUN dnf -y update && \
