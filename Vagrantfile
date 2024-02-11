@@ -23,7 +23,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Set the name of the VM. See: http://stackoverflow.com/a/17864388/100134
   config.vm.define :listlocal do |listlocal|
-    listlocal.vm.network "forwarded_port", guest: 3306,  host: 3306,   protocol: "tcp"
+    listlocal.vm.network "forwarded_port",  guest: 3306,  host: 3306,   protocol: "tcp"
+    listlocal.vm.network "forwarded_port",  guest: 80,    host: 80,     protocol: "tcp"
   end
 
   # Ansible provisioner.
