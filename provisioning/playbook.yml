@@ -12,6 +12,7 @@
       when: ansible_os_family == 'RedHat'
     - role: geerlingguy.repo-remi
       when: ansible_os_family == 'RedHat'
-    - geerlingguy.mysql
-    - geerlingguy.nginx
+    # - geerlingguy.mysql
+    - geerlingguy.php-versions
     - geerlingguy.php
+    - geerlingguy.nginx
