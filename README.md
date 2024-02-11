@@ -7,7 +7,6 @@ This repository demonstrates a pattern by which a clever builder can:
 - Run a local RockyLinux9 container that is nearly identical a VM or baremetal node
 - Bootstrap the local node with Ansible, in a way that is completely identical to how Ansible would bootstrap a remote VM or baremetal host
 - Set up that host with:
-
   - MySQL 8.x
   - Nginx
   - PHP 8.2 + FPM
@@ -91,7 +90,11 @@ Curious builders are encouraged to read the documentation for the Ansible roles 
 
 ### Vagrant
 
-This setup uses the `vagrant-hostmanager` plugin.
+- [Vagrant Docs](https://www.vagrantup.com/)
+- [Vagrant Docker Provider](https://developer.hashicorp.com/vagrant/docs/providers/docker/basics)
+- [Vagrant Ansible Provisioner](https://developer.hashicorp.com/vagrant/docs/provisioning/ansible_intro)
+
+This setup uses the `vagrant-hostmanager` plugin. This is installed for you, automatically.
 
 The hostmanager plugin will dynamically and automatically map the local IP of your vagrant guest into your local `hosts` file, so that you can access services inside the vagrant guest from your local machine.
 
@@ -108,7 +111,3 @@ See here:
 ```
 
 As you can see, we bind `mysql` and `http` locally. You can access them as though they're running on your localhost.
-
-- [Vagrant Docs](https://www.vagrantup.com/)
-- [Vagrant Docker Provider](https://developer.hashicorp.com/vagrant/docs/providers/docker/basics)
-- [Vagrant Ansible Provisioner](https://developer.hashicorp.com/vagrant/docs/provisioning/ansible_intro)
