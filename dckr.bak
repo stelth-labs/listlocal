@@ -1,0 +1,3 @@
+FROM serversideup/php:8.2-fpm-nginx
+COPY index.php /var/www/html/public/index.php
+RUN chown -R webuser:webgroup /var/www/html
