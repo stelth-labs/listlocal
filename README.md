@@ -26,10 +26,17 @@ This enables the ability to ship "environments" for:
 
 ### Requirements
 
-- Install the latest distribution of ruby (rvm is recommended)
-- Install the latest Vagrant Beta if running Apple Silicon, else install vanilla Vagrant (brew recommended)
+- Install the latest distribution of ruby (using rvm is recommended)
+  - <https://rvm.io/>
+- Install the latest distribution of Vagrant
+    ```sh
+      brew tap hashicorp/tap
+      brew install hashicorp/tap/hashicorp-vagrant
+    ```
 - Install the latest Docker Desktop
-- Install Ansible (`pip3 install ansible`)
+- Install Ansible
+  - Make sure you're running `Python3` and `pip3`
+  - `pip3 install ansible`
 
 ### Fire up the machine
 
