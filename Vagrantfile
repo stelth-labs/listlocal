@@ -11,12 +11,13 @@ end
 # Configure the Guest (as an ssh-enabled container === speed!)
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "docker" do |container, override|
+    container.volumes         = ["./src:/code", "./configs/default.conf:/etc/nginx/conf.d/default.conf"]
     container.build_dir       = "."
     container.has_ssh         = true
     container.privileged      = true
     container.remains_running = true
-    override.ssh.username     = "vagrant"
     container.create_args     = ["--cgroupns=host"]
+    override.ssh.username     = "vagrant"
   end
 
   config.vm.hostname = "listlocal"
