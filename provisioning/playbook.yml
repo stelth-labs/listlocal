@@ -7,7 +7,7 @@
     - vars/main.yml
 
   roles:
-    - geerlingguy.firewall
+    # - geerlingguy.firewall
     - role: geerlingguy.repo-epel
       when: ansible_os_family == 'RedHat'
     - role: geerlingguy.repo-remi
