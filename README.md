@@ -11,7 +11,11 @@ This repository demonstrates a pattern by which a clever builder can:
   - Nginx
   - PHP 8.2 + FPM
 
-Given that the Ansible implementation is totally generic, we achieve the objective of using the same automation for the local node as we would for a remote node.
+The toolchain basically works like this:
+
+You spin up Vagrant (for local dev) --> Vagrant builds a Docker container --> the Docker container exposes SSH for Vagrant + Ansible --> Vagrant runs Ansible provisioning on the Docker container
+
+Given that the Ansible implementation is totally generic, we achieve the objective of using the same automation for the local node as we would for a remote node, or for Docker containers we build and ship as deployment artifacts to the servers.
 
 This enables the ability to ship "environments" for:
 
@@ -20,7 +24,7 @@ This enables the ability to ship "environments" for:
 - staging
 - production
 
-...which are configured and deployed by the same, uniform, repeatable, and reproducible scripts and automation.
+...which are configured, built, and deployed by one common set of uniform, repeatable, and reproducible automation and process.
 
 ## Getting Started
 
