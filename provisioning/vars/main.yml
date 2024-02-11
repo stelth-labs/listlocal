@@ -1,0 +1,47 @@
+---
+mysql_daemon: mysqld
+mysql_enabled_on_startup: true
+mysql_log_error: /var/log/mysql/mysql.err
+mysql_pid_file: /var/run/mysqld/mysqld.pid
+mysql_packages:
+  - mysql
+  - mysql-server
+  - python3-PyMySQL.noarch
+
+nginx_worker_connections: 1024
+
+php_enable_php_fpm: true
+php_enablerepo: remi
+php_version: '8.2'
+php_webserver_daemon: nginx
+
+php_packages:
+  - ImageMagick
+  - php
+  - php-cli
+  - php-common
+  - php-devel
+  - php-gd
+  - php-ldap
+  - php-mbstring
+  - php-pdo
+  - php-pear
+  - php-xml
+  - php-fpm
+  # - php-pecl-apc
+  # - php-xmlrpc
+
+### Graveyard
+# mysql_enablerepo: remi
+# mysql_log: /var/log/mysqld.log
+# mysql_log_error: /var/log/mysqld.err
+# mysql_socket: /var/lib/mysql/mysql.sock
+# mysql_root_password: root
+# mysql_syslog_tag: mysql
+# mysql_syslog_tag: mysqld
+# mysql_user_home: /root
+# mysql_user_name: root
+# mysql_user_password: root
+# Logging settings.
+# mysql_log: /var/log/mysql/mysql.log
+# The following variables have a default value depending on operating system.
