@@ -1,4 +1,9 @@
 ---
+##############################################################################################
+# MYSQL
+# ref: https://github.com/geerlingguy/ansible-role-mysql/blob/master/defaults/main.yml
+##############################################################################################
+
 mysql_daemon: mysqld
 mysql_enabled_on_startup: true
 mysql_log_error: /var/log/mysql/mysql.err
@@ -8,7 +13,23 @@ mysql_packages:
   - mysql-server
   - python3-PyMySQL.noarch
 
+mysql_users:
+  - name: localadmin
+    host: '%'
+    password: localadmin
+    priv: '*.*:ALL'
+
+##############################################################################################
+# NGINX
+# ref: https://github.com/geerlingguy/ansible-role-nginx/blob/master/defaults/main.yml
+##############################################################################################
+
 nginx_worker_connections: 1024
+
+##############################################################################################
+# PHP
+# ref: https://github.com/geerlingguy/ansible-role-php/blob/master/defaults/main.yml
+##############################################################################################
 
 php_enable_php_fpm: true
 php_enablerepo: remi
@@ -28,20 +49,3 @@ php_packages:
   - php-pear
   - php-xml
   - php-fpm
-  # - php-pecl-apc
-  # - php-xmlrpc
-
-### Graveyard
-# mysql_enablerepo: remi
-# mysql_log: /var/log/mysqld.log
-# mysql_log_error: /var/log/mysqld.err
-# mysql_socket: /var/lib/mysql/mysql.sock
-# mysql_root_password: root
-# mysql_syslog_tag: mysql
-# mysql_syslog_tag: mysqld
-# mysql_user_home: /root
-# mysql_user_name: root
-# mysql_user_password: root
-# Logging settings.
-# mysql_log: /var/log/mysql/mysql.log
-# The following variables have a default value depending on operating system.
