@@ -4,7 +4,7 @@
 
 This repository demonstrates a pattern by which a clever builder can:
 
-- Run a local RockyLinux9 container that is nearly identical a VM or baremetal node
+- Run a local RockyLinux9 container that is functionally identical to a VM or baremetal node
 - Bootstrap the local node with Ansible, in a way that is completely identical to how Ansible would bootstrap a remote VM or baremetal host
 - Set up that host with:
   - MySQL 8.x
