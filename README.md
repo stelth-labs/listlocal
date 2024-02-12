@@ -41,6 +41,7 @@ This enables the ability to ship "environments" for:
 - Install Ansible
   - Make sure you're running `Python3` and `pip3`
   - `pip3 install ansible`
+  - In the repo root: `ansible-galaxy install -r requirements.yml`
 
 ### Fire up the machine
 
